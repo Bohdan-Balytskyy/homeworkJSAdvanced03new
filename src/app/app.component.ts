@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tasklist';
+  text: string;
+  count: number;
+  newTask: string;
+  add() {
+    if (this.text) {
+      this.newTask = this.text;
+      this.text = '';
+      this.count++;
+    }
+  }
+  changeCount(n:number) {
+    this.count = n;
+  }
 }
